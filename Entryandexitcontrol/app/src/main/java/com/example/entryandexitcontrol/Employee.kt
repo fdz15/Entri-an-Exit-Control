@@ -6,6 +6,7 @@ import androidx.annotation.RequiresApi
 import com.example.entryandexitcontrol.AcademicLevel
 import java.time.LocalDate
 
+
 data class Employee (
     val id: Long,
     val fullName:String,
@@ -19,20 +20,16 @@ data class Employee (
         val currentYear = LocalDate.now().year
         val currentMonth = LocalDate.now().monthValue
         val currentDay = LocalDate.now().dayOfMonth
-        val yearOfBirth = dateOfAdmission.year
-        val monthOfBirth = dateOfAdmission.monthValue
-        val dayOfBirth = dateOfAdmission.dayOfMonth
-
-        val year = currentYear - yearOfBirth
-        return (if (currentMonth<monthOfBirth ||
-            (currentMonth==monthOfBirth && currentDay<dayOfBirth ))
+        val yearOfAdmission = dateOfAdmission.year
+        val monthOfAdmission = dateOfAdmission.monthValue
+        val dayOfAdmission = dateOfAdmission.dayOfMonth
+        val year = currentYear - yearOfAdmission
+        return (if (currentMonth<monthOfAdmission ||
+            (currentMonth==monthOfAdmission && currentDay<dayOfAdmission ))
             year - 1
         else
             year)
     }
     fun getGenre()=curp.substring(10,11)
 
-fun toStrings():String{
-    return ""
-}
 }

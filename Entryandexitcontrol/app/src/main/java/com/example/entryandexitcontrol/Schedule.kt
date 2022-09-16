@@ -8,8 +8,9 @@ import java.time.Period
 
 class Schedule private  constructor (private val details: ArrayList<Detail>) {
 
-    data class Builder(val employee: Employee,
-                       val period: Period
+    data class Builder(
+        val employee: Employee,
+        val period: com.example.entryandexitcontrol.Period
     ) {
 
         private val details= ArrayList<Detail>()
